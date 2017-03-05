@@ -1923,6 +1923,16 @@ input[type="checkbox"]:focus+label:before, input[type="radio"]:focus+label:befor
     height: 100%;
     min-height: 3em;
     background: #161928;
+    justify-content: center;
+    align-items: center;
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    padding: 3em
+}
+
+.form-container form {
+    width: 100%;
 }
 
 .image {
