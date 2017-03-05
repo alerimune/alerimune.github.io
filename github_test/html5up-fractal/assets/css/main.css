@@ -1921,27 +1921,12 @@ input[type="checkbox"]:focus+label:before, input[type="radio"]:focus+label:befor
     margin: 0 3em 0 0;
     width: 26em;
     height: 100%;
+    min-height: 3em;
     background: #161928;
 }
 
 .image {
     box-shadow: 0 0 0 4px #ffffff, 0 0 0 5px #e6e6e6;
-}
-
-.image.phone {
-    box-shadow: none;
-}
-
-.image.phone .inner, .image.phone:before, .image.phone:after {
-    border-color: #e6e6e6;
-}
-
-.image.phone .inner:before {
-    background: #e6e6e6;
-}
-
-.image.phone .inner:after {
-    border-color: #e6e6e6;
 }
 
 
@@ -2431,22 +2416,6 @@ table.alt tbody tr td {
     box-shadow: 0 0 0 4px #4696e5, 0 0 0 5px rgba(255, 255, 255, 0.25);
 }
 
-.wrapper.style1 .image.phone {
-    box-shadow: none;
-}
-
-.wrapper.style1 .image.phone .inner, .wrapper.style1 .image.phone:before, .wrapper.style1 .image.phone:after {
-    border-color: rgba(255, 255, 255, 0.25);
-}
-
-.wrapper.style1 .image.phone .inner:before {
-    background: rgba(255, 255, 255, 0.25);
-}
-
-.wrapper.style1 .image.phone .inner:after {
-    border-color: rgba(255, 255, 255, 0.25);
-}
-
 .wrapper.style1 ul.alt>li {
     border-top-color: rgba(255, 255, 255, 0.25);
 }
@@ -2604,22 +2573,6 @@ table.alt tbody tr td {
 
 .wrapper.style2 .image {
     box-shadow: 0 0 0 4px #fbfbfb, 0 0 0 5px #e6e6e6;
-}
-
-.wrapper.style2 .image.phone {
-    box-shadow: none;
-}
-
-.wrapper.style2 .image.phone .inner, .wrapper.style2 .image.phone:before, .wrapper.style2 .image.phone:after {
-    border-color: #e6e6e6;
-}
-
-.wrapper.style2 .image.phone .inner:before {
-    background: #e6e6e6;
-}
-
-.wrapper.style2 .image.phone .inner:after {
-    border-color: #e6e6e6;
 }
 
 .wrapper.style2 ul.alt>li {
@@ -2784,22 +2737,6 @@ table.alt tbody tr td {
     box-shadow: 0 0 0 4px #f7f7f7, 0 0 0 5px #d6d6d6;
 }
 
-.wrapper.style3 .image.phone {
-    box-shadow: none;
-}
-
-.wrapper.style3 .image.phone .inner, .wrapper.style3 .image.phone:before, .wrapper.style3 .image.phone:after {
-    border-color: #d6d6d6;
-}
-
-.wrapper.style3 .image.phone .inner:before {
-    background: #d6d6d6;
-}
-
-.wrapper.style3 .image.phone .inner:after {
-    border-color: #d6d6d6;
-}
-
 .wrapper.style3 ul.alt>li {
     border-top-color: #d6d6d6;
 }
@@ -2900,7 +2837,7 @@ table.alt tbody tr td {
 
 #header {
     background-color: #4696e5;
-    color: #d0e4f8;
+    color: #000000;
     padding: 4.5em 0 2.5em 0;
     -moz-align-items: center;
     -webkit-align-items: center;
@@ -2914,12 +2851,12 @@ table.alt tbody tr td {
     -webkit-justify-content: center;
     -ms-justify-content: center;
     justify-content: center;
-    background-image: url("images/overlay.png");
+    background-image: url("images/background.jpg");
     background-position: top left, center center;
     background-attachment: fixed, fixed;
     background-size: auto, cover;
-    height: 100vh;
-    min-height: 35em;
+    height: 70vh;
+    min-height: 40em;
 }
 
 #header input[type="submit"], #header input[type="reset"], #header input[type="button"], #header button, #header .button {
@@ -3009,22 +2946,6 @@ table.alt tbody tr td {
     box-shadow: 0 0 0 4px #4696e5, 0 0 0 5px rgba(255, 255, 255, 0.25);
 }
 
-#header .image.phone {
-    box-shadow: none;
-}
-
-#header .image.phone .inner, #header .image.phone:before, #header .image.phone:after {
-    border-color: rgba(255, 255, 255, 0.25);
-}
-
-#header .image.phone .inner:before {
-    background: rgba(255, 255, 255, 0.25);
-}
-
-#header .image.phone .inner:after {
-    border-color: rgba(255, 255, 255, 0.25);
-}
-
 #header ul.alt>li {
     border-top-color: rgba(255, 255, 255, 0.25);
 }
@@ -3068,7 +2989,7 @@ table.alt tbody tr td {
 }
 
 #header h1, #header h2, #header h3, #header h4, #header h5, #header h6 {
-    color: #ffffff;
+    color: #0066b1;
 }
 
 #header blockquote {
@@ -3143,7 +3064,7 @@ table.alt tbody tr td {
 
 @media screen and (max-width: 1280px) {
     #header {
-        background-image: url("images/overlay.png");
+        background-image: url("images/background.jpg");
     }
 }
 
@@ -3178,7 +3099,7 @@ table.alt tbody tr td {
 
 @media screen and (max-width: 736px) {
     #header {
-        background-image: url("images/overlay.png");
+        background-image: url("images/background.jpg");
     }
     #header h1 {
         font-size: 2em;
