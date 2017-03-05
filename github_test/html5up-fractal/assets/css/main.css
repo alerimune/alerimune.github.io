@@ -1919,10 +1919,13 @@ input[type="checkbox"]:focus+label:before, input[type="radio"]:focus+label:befor
     box-shadow: none;
     border-radius: 0;
     margin: 0 3em 0 0;
-    width: 26em;
+    width: 50%;
+    height: 100%;
+    max-width: 28em;
+    min-height: 3em;
     height: 100%;
     min-height: 3em;
-    background: #161928;
+    background: #333b48;
     justify-content: center;
     align-items: center;
     display: flex;
@@ -1933,6 +1936,15 @@ input[type="checkbox"]:focus+label:before, input[type="radio"]:focus+label:befor
 
 .form-container form {
     width: 100%;
+}
+
+@media screen and (max-width: 980px) {
+    .form-container {
+        margin: 0;
+        width: 100%;
+        height: 100%;
+        padding: 1em
+    }
 }
 
 .image {
@@ -2848,7 +2860,7 @@ table.alt tbody tr td {
 #header {
     background-color: #4696e5;
     color: #000000;
-    padding: 4.5em 0 2.5em 0;
+    padding: 0;
     -moz-align-items: center;
     -webkit-align-items: center;
     -ms-align-items: center;
@@ -3072,45 +3084,29 @@ table.alt tbody tr td {
     opacity: 1;
 }
 
-@media screen and (max-width: 1280px) {
-    #header {
-        background-image: url("images/background.jpg");
-    }
-}
-
 @media screen and (max-width: 980px) {
     #header {
         height: auto;
         min-height: 0;
-    }
-    #header .content {
-        margin: -2em 4em 0 0;
-    }
-}
-
-@media screen and (max-width: 980px) and (orientation: portrait) {
-    #header {
-        padding: 6em 3em 4em 3em;
-        -moz-flex-direction: column-reverse;
-        -webkit-flex-direction: column-reverse;
-        -ms-flex-direction: column-reverse;
-        flex-direction: column-reverse;
+        padding: 0 3em 0 3em;
+        -moz-flex-direction: column;
+        -webkit-flex-direction: column;
+        -ms-flex-direction: column;
+        flex-direction: column;
     }
     #header .content {
         display: block;
         width: 100%;
         text-align: center;
-        margin: 0 0 2em 0;
+        margin: 2em 0 2em 0;
     }
+
     #header .image {
         overflow: hidden;
     }
 }
 
 @media screen and (max-width: 736px) {
-    #header {
-        background-image: url("images/background.jpg");
-    }
     #header h1 {
         font-size: 2em;
     }
@@ -3122,7 +3118,7 @@ table.alt tbody tr td {
 
 @media screen and (max-width: 736px) and (orientation: landscape) {
     #header {
-        padding: 2em 2em 0.1em 2em;
+        padding: 0;
     }
     #header .content {
         margin: 0 2em 2em 0;
@@ -3139,7 +3135,7 @@ table.alt tbody tr td {
 
 @media screen and (max-width: 736px) and (orientation: portrait) {
     #header {
-        padding: 3em 1.5em 1em 1.5em;
+        padding: 0;
     }
     #header .image {
         font-size: 0.6em;
@@ -3148,19 +3144,11 @@ table.alt tbody tr td {
 }
 
 @media screen and (max-width: 480px) and (orientation: landscape) {
-    #header {
-        padding: 2em 1.5em 0.1em 1.5em;
-    }
     #header .image {
         font-size: 0.7em;
     }
 }
 
-@media screen and (max-width: 480px) and (orientation: portrait) {
-    #header {
-        padding: 2em 1em 0.1em 1em;
-    }
-}
 
 body.is-mobile #header {
     background-attachment: scroll, scroll;
