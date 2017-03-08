@@ -25,7 +25,10 @@
 			<p>Diagnósticos precisos, testes adequados<br/>e tratamentos personalizados</p>
 		</div>
 		<div class="form-container">
-			<form action="https://getsimpleform.com/messages?form_api_token=3004fdb3cbeb72a1765d8f0e3edf182f" method="post">
+			<div id="thank_you_message" style="display:none">
+				<h4>Obrigado, será contactado assim que possivel.</h4>
+			</div>
+			<form id="gform" action="https://script.google.com/macros/s/AKfycbyhIYSgLczzm_7UQIaWrVXEzNBnrNpH_anqWgVq0RcOPJpvvKZ0/exec" method="post">
 				<div class="row uniform">
 					<h3>Marque já a sua consulta com o Prof. Dr. Luís Delgado</h3>
 					<h4>Deixe os seus contactos. A Alerimune liga.</h4>
@@ -35,9 +38,9 @@
 					<div class="12u$">
 						<input type="text" name="telefone" id="telefone" value="" placeholder="Telefone" required/>
 					</div>
-					<input type='hidden' name='redirect_to' value='http://fooey.com/thank-you.html' />
+					<input type="text" name="hp" value="" style="display:none" />
 					<div class="12u$">
-						<input type="submit" value="Marcar consulta" class="special fit" />
+						<input id="submit" type="submit" value="Marcar consulta" class="special fit" />
 					</div>
 				</div>
 			</form>
