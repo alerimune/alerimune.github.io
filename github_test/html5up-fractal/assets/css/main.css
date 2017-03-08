@@ -1938,6 +1938,18 @@ input[type="checkbox"]:focus+label:before, input[type="radio"]:focus+label:befor
     width: 100%;
 }
 
+#header .form-container h1, #header .form-container h2, #header .form-container h3, #header .form-container h4, #header .form-container h5, #header .form-container h6, #header .form-container h7, #header.form-container h8 {
+    color: #FFFFFF
+}
+
+.form-container input {
+    margin: 1em 0 1em 0
+}
+#header .form-container input[type="submit"] {
+  background-color: #00c4ff;
+  color: #ffffff !important;
+}
+
 @media screen and (max-width: 980px) {
     .form-container {
         margin: 0;
