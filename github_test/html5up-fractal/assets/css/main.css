@@ -1950,6 +1950,10 @@ input[type="checkbox"]:focus+label:before, input[type="radio"]:focus+label:befor
     padding: 3em
 }
 
+#header .form-container #thank_you_message {
+  padding: 4em 0em;
+}
+
 #header .form-space {
     height: 1em;
     display: block;
@@ -3098,7 +3102,7 @@ table.alt tbody tr td {
     transform: translateX(0);
     opacity: 1;
     text-align: right;
-    margin: -3.5em 4em 0 0;
+    margin: 0 4em 0 0;
 }
 
 #header .content> :last-child {
