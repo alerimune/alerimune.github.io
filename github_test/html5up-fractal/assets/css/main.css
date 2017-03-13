@@ -2011,9 +2011,8 @@ input[type="checkbox"]:focus+label:before, input[type="radio"]:focus+label:befor
     text-align: center;
 }
 
-
 .doenca img {
-  background: red;
+    max-width: 70%;
 }
 
 .doenca h4 {
