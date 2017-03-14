@@ -2025,29 +2025,33 @@ input[type="checkbox"]:focus+label:before, input[type="radio"]:focus+label:befor
 .doenca ul {
     margin-left: auto;
     margin-right: auto;
-    padding: 0 3em 0 3em;
-    max-width: 18em;
-    color: #cccccc;
+    list-style: none;
+    max-width: 10em;
+    color: #999999;
     margin-bottom: 4em;
+    padding-left: 0;
 }
 
 .doenca li {
-    margin-top: 0.66em;
-}
-
-.doenca li span {
-    color: #999999;
+    margin-top: 1em;
+    padding-left: 0;
 }
 
 @media screen and (max-width: 980px) {
     .doenca {
         width: 50%;
     }
+    .doenca ul {
+        max-width: 13em;
+    }
 }
 
 @media screen and (max-width: 736px) {
     .doenca {
         width: 100%;
+    }
+    .doenca ul {
+        max-width: 16em;
     }
 }
 
