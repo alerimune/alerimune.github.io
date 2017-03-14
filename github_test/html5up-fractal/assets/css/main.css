@@ -3103,7 +3103,7 @@ table.alt tbody tr td {
     -webkit-justify-content: center;
     -ms-justify-content: center;
     justify-content: center;
-    background-image: url("images/background.jpg");
+    background-image: url("images/background-blurred.jpg");
     background-position: top left, center center;
     background-attachment: fixed, fixed;
     background-size: auto, cover;
