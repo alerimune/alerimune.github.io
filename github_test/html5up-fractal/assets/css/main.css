@@ -2164,6 +2164,13 @@ input[type="checkbox"]:focus+label:before, input[type="radio"]:focus+label:befor
     background-color: #00c4ff;
     font-size: 1.2em;
     box-shadow: inset 0 0 0 2px rgba(255, 255, 255, 0.25);
+    padding: 0 1.75em;
+}
+
+@media screen and (max-width: 480px) {
+    #footer #call-to-action {
+        padding: 0 1em;
+    }
 }
 
 .image {
