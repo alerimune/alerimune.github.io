@@ -2142,6 +2142,11 @@ input[type="checkbox"]:focus+label:before, input[type="radio"]:focus+label:befor
     width: 50%;
 }
 
+#section-clinicas .clinicas-clinica p {
+    margin-top: 1em;
+    font-size: 0.85em;
+}
+
 #section-clinicas iframe {
     width: 100%;
     padding: 0.5em;
@@ -3342,7 +3347,7 @@ table.alt tbody tr td {
         padding: 0;
     }
     #header .content {
-        margin: 0 2em 2em 0;
+        margin: 2em 2em 2em 0;
     }
     #header .image {
         font-size: 0.8em;
