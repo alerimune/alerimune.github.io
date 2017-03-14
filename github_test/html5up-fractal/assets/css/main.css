@@ -2132,6 +2132,32 @@ input[type="checkbox"]:focus+label:before, input[type="radio"]:focus+label:befor
     }
 }
 
+#section-clinicas .clinicas-content {
+    display: flex;
+    flex-wrap: wrap;
+    flex-direction: row;
+}
+
+#section-clinicas .clinicas-clinica {
+    width: 50%;
+}
+
+#section-clinicas iframe {
+    width: 100%;
+    padding: 0.5em;
+    height: 26em;
+}
+
+@media screen and (max-width: 980px) {
+    #section-clinicas .clinicas-clinica {
+        width: 100%;
+        margin-bottom: 3em;
+    }
+    #section-clinicas iframe {
+        padding: 0;
+    }
+}
+
 .image {
     box-shadow: 0 0 0 4px #ffffff, 0 0 0 5px #e6e6e6;
 }
