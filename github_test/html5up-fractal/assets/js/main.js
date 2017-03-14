@@ -61,9 +61,16 @@
     });
 })(jQuery);
 
+// disable google maps wheel scroll until clicked
+$('.maps').click(function () {
+    $('.maps iframe').css("pointer-events", "auto");
+});
+
+$(".maps").mouseleave(function() {
+  $('.maps iframe').css("pointer-events", "none");
+});
 
 // form summit
-
 // get all data in form and return object
 function getFormData() {
     var elements = document.getElementById("gform").elements; // all form elements
