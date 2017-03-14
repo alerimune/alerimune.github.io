@@ -2091,6 +2091,47 @@ input[type="checkbox"]:focus+label:before, input[type="radio"]:focus+label:befor
     }
 }
 
+#section-bio .bio-content {
+    display: flex;
+    flex-wrap: wrap;
+    flex-direction: row;
+}
+
+#section-bio .bio-photo {
+    width: 40%;
+}
+
+#section-bio .bio-photo img {
+    max-height: 100%;
+    max-width: 100%;
+}
+
+#section-bio .bio-text {
+    width: 60%;
+    padding-left: 4em;
+    padding-right: 2em;
+}
+
+#section-bio .bio-text li {
+    margin-top: 1.2em;
+}
+
+@media screen and (max-width: 736px) {
+    #section-bio .bio-photo {
+        text-align: center;
+        width: 100%;
+        margin-bottom: 3em;
+    }
+    #section-bio .bio-photo img {
+        max-height: 20em;
+    }
+    #section-bio .bio-text {
+        width: 100%;
+        padding-left: 2em;
+        padding-right: 2em;
+    }
+}
+
 .image {
     box-shadow: 0 0 0 4px #ffffff, 0 0 0 5px #e6e6e6;
 }
