@@ -62,12 +62,12 @@
 })(jQuery);
 
 // disable google maps wheel scroll until clicked
-$('.maps').click(function () {
+$('.maps').click(function() {
     $('.maps iframe').css("pointer-events", "auto");
 });
 
 $(".maps").mouseleave(function() {
-  $('.maps iframe').css("pointer-events", "none");
+    $('.maps iframe').css("pointer-events", "none");
 });
 
 // form summit
@@ -105,7 +105,7 @@ function getFormData() {
 
 function handleFormSubmit(event) { // handles form submit withtout any jquery
     event.preventDefault(); // we are submitting via xhr below
-		document.getElementById('submit').disabled = true
+    document.getElementById('submit').disabled = true
 
     var data = getFormData(); // get the values submitted in the form
 
@@ -117,9 +117,16 @@ function handleFormSubmit(event) { // handles form submit withtout any jquery
     xhr.onreadystatechange = function() {
         console.log(xhr.status, xhr.statusText)
         console.log(xhr.responseText);
-				document.getElementById('submit').disabled = false
+        document.getElementById('submit').disabled = false
         document.getElementById('gform').style.display = 'none'; // hide form
         document.getElementById('thank_you_message').style.display = 'block';
+        ga('send', {
+            hitType: 'event',
+            eventCategory: 'form',
+            eventAction: 'submit',
+            eventLabel: xhr.statusText,
+            eventValue: xhr.status
+        });
         return;
     };
     // url encode form data for sending as post data
