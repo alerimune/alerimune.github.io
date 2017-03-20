@@ -99,24 +99,34 @@ $(function() {
 
         // Fire off the request
         request = $.ajax({
-            //url: "/form.php",
             url: event.target.action,
             type: "post",
             data: serializedData
         });
 
         request.done(function(response, textStatus, jqXHR) {
-            console.log("Success: " + textStatus + " data: " + response.data);
+            console.log("Success: " + textStatus + ", data: " + response.data, ", error: " + response.error);
+
 
             $("#gform").hide();
             $("#thank_you_message").show();
 
-            ga('send', {
-                hitType: 'event',
-                eventCategory: 'form',
-                eventAction: 'submit',
-                eventLabel: 'success',
-            });
+            if (response.error) {
+                ga('send', {
+                    hitType: 'event',
+                    eventCategory: 'form',
+                    eventAction: 'submit',
+                    eventLabel: 'server erros: ' + response.error,
+                });
+
+            } else {
+                ga('send', {
+                    hitType: 'event',
+                    eventCategory: 'form',
+                    eventAction: 'submit',
+                    eventLabel: 'success',
+                });
+            }
         });
 
         request.fail(function(jqXHR, textStatus, errorThrown) {
