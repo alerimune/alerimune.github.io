@@ -115,7 +115,7 @@ $(function() {
                 ga('send', {
                     hitType: 'event',
                     eventCategory: 'form',
-                    eventAction: 'submit',
+                    eventAction: 'error',
                     eventLabel: 'server erros: ' + response.error,
                 });
 
