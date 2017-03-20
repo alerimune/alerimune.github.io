@@ -70,76 +70,73 @@ $(".maps").mouseleave(function() {
     $('.maps iframe').css("pointer-events", "none");
 });
 
+
+
+
 // form summit
-// get all data in form and return object
-function getFormData() {
-    var elements = document.getElementById("gform").elements; // all form elements
-    var fields = Object.keys(elements).map(function(k) {
-        if (elements[k].name !== undefined) {
-            return elements[k].name;
-            // special case for Edge's html collection
-        } else if (elements[k].length > 0) {
-            return elements[k].item(0).name;
+$(function() {
+    // Variable to hold request
+    var request;
+    // Bind to the submit event of our form
+    $("#gform").submit(function(event) {
+        // Prevent default posting of form - put here to work in case of errors
+        event.preventDefault();
+
+        if (request) {
+            // Abort any pending request
+            request.abort();
         }
-    }).filter(function(item, pos, self) {
-        return self.indexOf(item) == pos && item;
-    });
-    var data = {};
-    fields.forEach(function(k) {
-        data[k] = elements[k].value;
-        if (elements[k].type === "checkbox") {
-            data[k] = elements[k].checked;
-            // special case for Edge's html collection
-        } else if (elements[k].length) {
-            for (var i = 0; i < elements[k].length; i++) {
-                if (elements[k].item(i).checked) {
-                    data[k] = elements[k].item(i).value;
-                }
-            }
-        }
-    });
-    console.log(data);
-    return data;
-}
+        var $form = $(this);
 
+        // Let's select and cache all the fields
+        var $inputs = $form.find("input, select, button, textarea");
+        var serializedData = $form.serialize();
 
-function handleFormSubmit(event) { // handles form submit withtout any jquery
-    event.preventDefault(); // we are submitting via xhr below
-    document.getElementById('submit').disabled = true
+        // Let's disable the inputs for the duration of the Ajax request.
+        // Note: we disable elements AFTER the form data has been serialized.
+        // Disabled form elements will not be serialized.
+        $inputs.prop("disabled", true);
 
-    var data = getFormData(); // get the values submitted in the form
-
-    var url = event.target.action;
-    var xhr = new XMLHttpRequest();
-    xhr.open('POST', url);
-    // xhr.withCredentials = true;
-    xhr.setRequestHeader('Content-Type', 'application/x-www-form-urlencoded');
-    xhr.onreadystatechange = function() {
-        console.log(xhr.status, xhr.statusText)
-        console.log(xhr.responseText);
-        document.getElementById('submit').disabled = false
-        document.getElementById('gform').style.display = 'none'; // hide form
-        document.getElementById('thank_you_message').style.display = 'block';
-        ga('send', {
-            hitType: 'event',
-            eventCategory: 'form',
-            eventAction: 'submit',
-            eventLabel: xhr.statusText,
-            eventValue: xhr.status
+        // Fire off the request
+        request = $.ajax({
+            //url: "/form.php",
+            url: event.target.action,
+            type: "post",
+            data: serializedData
         });
-        return;
-    };
-    // url encode form data for sending as post data
-    var encoded = Object.keys(data).map(function(k) {
-        return encodeURIComponent(k) + '=' + encodeURIComponent(data[k])
-    }).join('&')
-    xhr.send(encoded);
-}
 
-function loaded() {
-    console.log('contact form submission handler loaded successfully');
-    // bind to the submit event of our form
-    var form = document.getElementById('gform');
-    form.addEventListener("submit", handleFormSubmit, false);
-};
-document.addEventListener('DOMContentLoaded', loaded, false);
+        request.done(function(response, textStatus, jqXHR) {
+            console.log("Success " + response.data);
+
+            $("#gform").hide();
+            $("#thank_you_message").show();
+
+            ga('send', {
+                hitType: 'event',
+                eventCategory: 'form',
+                eventAction: 'submit',
+                eventLabel: 'success',
+            });
+        });
+
+        request.fail(function(jqXHR, textStatus, errorThrown) {
+            // Log the error to the console
+            console.error(
+                "The following error occurred: " +
+                textStatus, errorThrown
+            );
+            ga('send', {
+                hitType: 'event',
+                eventCategory: 'form',
+                eventAction: 'error',
+                eventLabel: textStatus + ", " + errorThrown,
+            });
+        });
+
+        request.always(function() {
+            // Reenable the inputs
+            $inputs.prop("disabled", false);
+        });
+
+    });
+});
