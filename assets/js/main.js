@@ -106,7 +106,7 @@ $(function() {
         });
 
         request.done(function(response, textStatus, jqXHR) {
-            console.log("Success " + response.data);
+            console.log("Success: " + textStatus + " data: " + response.data);
 
             $("#gform").hide();
             $("#thank_you_message").show();
