@@ -115,8 +115,8 @@ $(function() {
                 ga('send', {
                     hitType: 'event',
                     eventCategory: 'form',
-                    eventAction: 'error',
-                    eventLabel: 'server erros: ' + response.error,
+                    eventAction: 'script_error',
+                    eventLabel: '' + response.error,
                 });
 
             } else {
